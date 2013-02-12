@@ -3,8 +3,8 @@ output_dir: output
 index_filenames: [ 'index.html' ]
 enable_output_diff: false
 site:
-  title: "Scaffolder"
-  subtitle: "Genome scaffolding for human beings"
+  title: "Genomer"
+  subtitle: "A Swiss army knife for genome projects"
   url: "http://next.gs"
   favicon: "/images/favicon.ico"
   analytics_token: "UA-1362555-4"
