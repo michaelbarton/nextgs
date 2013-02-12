@@ -35,7 +35,7 @@ google_fonts:
     - "italic"
     - "bolditalic"
 scripts:
-  - "/javascript/prettify.js"
+  - "/javascript/scale.js"
 stylesheets:
-  "/stylesheets/screen.css": "screen,projection"
-  "/stylesheets/print.css": "print"
+  "/stylesheets/styles.css": "screen,projection"
+  "/stylesheets/pygment_trac.css": "screen,projection"
