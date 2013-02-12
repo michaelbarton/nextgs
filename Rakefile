@@ -18,7 +18,7 @@ task :watch do
 end
 
 task :view do
-  `nanoc view`
+  `nanoc view --port=9292`
 end
 
 namespace :template do
