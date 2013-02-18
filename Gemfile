@@ -11,13 +11,16 @@ group :development do
   gem 'nokogiri',       '~> 1.5.0'
   gem 'w3c_validators', '~> 1.2.0'
 
+  # Markup transform engines
   gem 'rdiscount',      '~> 2.0.0'
   gem 'haml',           '~> 4.0.0'
   gem 'sass',           '~> 3.2.0'
 
+  # File filters
   gem 'uglifier',       '~> 1.3.0'
   gem 'rainpress',      '~> 1.0.0'
 
+  # Continuous development tools
   gem 'rb-fsevent',      '~> 0.9.1'
   gem 'listen',          '~> 0.7.2'
   gem 'fssm',            '~> 0.2.0'
