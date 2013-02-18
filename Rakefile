@@ -20,6 +20,14 @@ end
 desc "Start nanoc watcher and viewer"
 multitask :dev => [:watch,:view]
 
+namespace :validate do
+
+  task :html => :build do
+    exec "nanoc check html"
+  end
+
+end
+
 file '.git/refs/remotes/heroku' do
   `git remote add -f heroku git@heroku.com:scaffolder.git`
 end
