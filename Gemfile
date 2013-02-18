@@ -15,7 +15,7 @@ group :development do
   gem 'haml',           '~> 4.0.0'
   gem 'sass',           '~> 3.2.0'
 
-  gem 'jsmin',          '~> 1.0.0'
+  gem 'uglifier',       '~> 1.3.0'
   gem 'rainpress',      '~> 1.0.0'
 
   gem 'rb-fsevent',      '~> 0.9.1'

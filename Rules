@@ -12,7 +12,7 @@ end
 compile '/static/*' do; end
 
 compile '/javascript/*/' do
-  filter :minify
+  filter :uglify_js, :squeeze => true
 end
 
 route '/javascript/*/' do
@@ -20,7 +20,7 @@ route '/javascript/*/' do
 end
 
 compile '/stylesheets/[^_]*/' do
-  filter :minify
+  filter :rainpress
 end
 
 route '/stylesheets/[^_]*/' do
