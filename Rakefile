@@ -14,7 +14,7 @@ task :watch do
 end
 
 task :view do
-  `nanoc view --port=9292`
+  `bundle exec rackup`
 end
 
 desc "Start nanoc watcher and viewer"
