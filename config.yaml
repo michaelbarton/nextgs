@@ -18,22 +18,6 @@ site:
 author:
   url: "http://www.michaelbarton.me.uk"
   name: "Michael Barton"
-google_fonts:
-  Molengo:
-    - "regular"
-    - "bold"
-    - "italic"
-    - "bolditalic"
-  Volkorn:
-    - "regular"
-    - "bold"
-    - "italic"
-    - "bolditalic"
-  Nobile:
-    - "regular"
-    - "bold"
-    - "italic"
-    - "bolditalic"
 scripts:
   - "/javascript/scale.js"
 stylesheets:
