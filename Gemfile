@@ -19,6 +19,7 @@ group :development do
   # File filters
   gem 'uglifier',       '~> 1.3.0'
   gem 'rainpress',      '~> 1.0.0'
+  gem 'typogruby',      '~> 1.0.15'
 
   # Continuous development tools
   gem 'rb-fsevent',      '~> 0.9.1'

@@ -36,6 +36,7 @@ compile '/markup/*' do
   filter :r_code_fix
   filter :erb
   filter :rdiscount
+  filter :typogruby
   layout 'default'
 end
 
