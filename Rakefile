@@ -26,6 +26,10 @@ namespace :validate do
     exec "nanoc check html"
   end
 
+  task :links => :build do
+    exec "nanoc check internal_links"
+  end
+
 end
 
 file '.git/refs/remotes/heroku' do
