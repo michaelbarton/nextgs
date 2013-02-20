@@ -12,6 +12,7 @@ site:
     'about':                "/"
     'install':              "/install/"
     'scaffold file format': "/man/scaffolder-format/"
+    'troubleshooting':      "/troubleshooting/"
     'contribute':           "/contribute/"
 author:
   url: "http://www.michaelbarton.me.uk"
