@@ -9,9 +9,10 @@ site:
   favicon: "/images/favicon.ico"
   analytics_token: "UA-1362555-4"
   navigation:
-    'contribute':           "/contribute/"
+    'about':                "/"
     'install':              "/install/"
     'scaffold file format': "/man/scaffolder-format/"
+    'contribute':           "/contribute/"
 author:
   url: "http://www.michaelbarton.me.uk"
   name: "Michael Barton"
