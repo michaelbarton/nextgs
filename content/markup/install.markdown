@@ -6,10 +6,10 @@
 
 ### How to install genomer
 
-Genomer requires both [Ruby][] and [RubyGems][] to run. Fortunately these are
-usually installed on recent Mac OSX or Linux systems, and can be installed easy
-otherwise. First test the presence of these by running the following commands
-on the console or terminal (excluding the '$' sign):
+Genomer requires both [Ruby][] and [RubyGems][] to run. Fortunately both of
+these are found on most recent Mac OSX or Linux systems. Test the installation
+of these by running the following commands on the console or terminal
+(excluding the ``$`` sign):
 
 [Ruby]: http://www.ruby-lang.org/
 [RubyGems]: http://rubygems.org/
@@ -17,28 +17,26 @@ on the console or terminal (excluding the '$' sign):
     $ ruby -v
     $ gem -v
 
-If both of these return without error then both ruby and ruby gems are
-installed. If either of these are present then install the missing components,
-[this guide][guide] provides an example. Once installed run the following
-command to install genomer.
+If both of these return without error then both Ruby and RubyGems are
+installed. If either of these are missing then they need to be installed to use
+genomer. [This guide][guide] provides examples of installing Ruby and RubyGems
+on several different systems. Once installed run the following command to
+ensure that RubyGems is installed to the latest version.
 
 [guide]: http://docs.cloudfoundry.com/frameworks/ruby/installing-ruby.html
 
+    $ sudo gem update --system
+
+Then install genomer with the following command:
+
     $ gem install genomer
 
-The install can be tests by running the following command. This should print
-the list of available gnomer options.
+Genomer can be tested by running the following command. This should print a
+short genomer help command. 
 
     $ genomer
 
-If this fails or returns an error the RubyGems executable directory may not be
-in your shell path. The location of this can found using the following command,
-the result of which should be added to the $PATH variable in your shell login
-script. Examples of updating the shell path are available [for OS X][osx_path]
-and [for Linux][linux_path]
+If any of steps fail when installing genomer please check the [troubleshooting
+page for installing.][trouble]
 
-[osx_path]: http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x
-[linux_path]: http://www.troubleshooters.com/linux/prepostpath.htm
-
-    # Add the output of this your $PATH
-    $ gem env | grep "EXECUTABLE DIRECTORY" | cut -d : -f 2
+[trouble]: /troubleshooting#install
