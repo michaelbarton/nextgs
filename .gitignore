@@ -3,5 +3,5 @@ output
 .sass-cache
 config.yaml
 
-# Man pages not under revision control
-content/markup/man
+# The scaffold format is fetched from the latest version of scaffold API Repo
+content/markup/scaffold-format.markdown

@@ -3,39 +3,23 @@ output_dir: output
 index_filenames: [ 'index.html' ]
 enable_output_diff: false
 site:
-  title: "Scaffolder"
-  subtitle: "Genome scaffolding for human beings"
+  title: "Genomer"
+  subtitle: "A Swiss army knife for genome projects"
   url: "http://next.gs"
   favicon: "/images/favicon.ico"
   analytics_token: "UA-1362555-4"
   navigation:
-    'api documentation':    "http://rubydoc.info/gems/scaffolder/frames"
-    'unix manual pages':    "/man/"
-    'contribute':           "/contribute/"
-    'mailing list':         "http://groups.google.com/group/scaffolder/topics"
-    'getting started':      "/getting-started/"
-    'scaffold file format': "/man/scaffolder-format/"
+    'about':           "/"
+    'install':         "/install/"
+    'scaffold format': "/scaffold-format/"
+    'troubleshooting': "/troubleshooting/"
+    'mailing list':    "/mailing-list/"
+    'contribute':      "/contribute/"
 author:
   url: "http://www.michaelbarton.me.uk"
   name: "Michael Barton"
-google_fonts:
-  Molengo:
-    - "regular"
-    - "bold"
-    - "italic"
-    - "bolditalic"
-  Volkorn:
-    - "regular"
-    - "bold"
-    - "italic"
-    - "bolditalic"
-  Nobile:
-    - "regular"
-    - "bold"
-    - "italic"
-    - "bolditalic"
 scripts:
-  - "/javascript/prettify.js"
+  - "/javascript/scale.js"
 stylesheets:
-  "/stylesheets/screen.css": "screen,projection"
-  "/stylesheets/print.css": "print"
+  "/stylesheets/styles.css": "screen,projection"
+  "/stylesheets/pygment_trac.css": "screen,projection"

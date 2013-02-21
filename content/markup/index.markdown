@@ -1,24 +1,18 @@
 --- 
-  title: Opinionated genome scaffolding
+  title: About
 ---
 
-Edit your genome sequence using a simple human readable syntax. Manage contig positions and add inserts all in a plain text file.
+Genomer is command line glue for genome projects. It simplifies the small but
+tedious tasks required when finishing a genome. Genomer makes it easy to
+reorganise contigs in a genome, map annotations on to the genome and generate
+the files required to submit a genome.
 
-<%= highlight %>
----
-  -
-    sequence:
-      source: "contig00001"
-      reverse: true
-  -
-    unresolved:
-      length: 10
-  -
-    sequence:
-      source: "scaffold00006"
-      inserts:
-      -
-        source: "pcr_sequence_6-1"
-        open: 599152
-        close: 599817
-<%= endhighlight %>
+Furthermore genomer aims make genome projects more reproducible and robust.
+Genomer is designed to work well with build tools such as [GNU Make][make] and
+revision control tools such as [git][git]. This makes genome projects easy to
+share and reproduce.
+
+[make]: http://www.gnu.org/software/make/
+[git]: http://git-scm.com/
+
+<%= youtube 'HfsdJOELFjs' %>
