@@ -1,41 +1,80 @@
 require 'rubygems'
-require 'bundler'
-begin
-  Bundler.setup(:default,:development)
-rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
-  exit e.status_code
+require 'bundler/setup'
+
+task :clean do
+  `rm -rf output`
 end
 
-require 'nanoc3/tasks'
+# The scaffold format fetched master branch of scaffold API repo
+file 'content/markup/scaffold-format.markdown' do |t|
+  require 'tempfile'
+  require './lib/content'
 
-desc "Start nanoc watcher and viewer"
-multitask :dev => [:watch,:view]
+  tmp = Tempfile.new('scaffold-file-format')
+  url = 'https://raw.github.com/next-gs/scaffolder-tools/master/man/scaffolder-format.7.ronn'
+  `curl #{url} > #{tmp.path}`
+
+  content = File.read(tmp.path).
+    split("\n").
+    drop(3).
+    reverse.
+    drop(5).
+    reverse.
+    map{|line| increase_markdown_header line }.
+    unshift("---\n\s\stitle: Scaffold Format\n---").
+    join("\n")
+
+  File.open(t.name,'w'){|out| out.print content }
+end
+
+task :build => [:clean, 'content/markup/scaffold-format.markdown'] do
+  `nanoc compile`
+end
 
 task :watch do
   `nanoc watch`
 end
 
 task :view do
-  `nanoc view`
+  `bundle exec rackup`
 end
 
-namespace :template do
+desc "Start nanoc watcher and viewer"
+multitask :dev => [:watch,:view]
 
-  desc "Add git remote branch for template website"
-  task :remote do
-    `git remote add template git://github.com/michaelbarton/nanoc-template.git`
+namespace :validate do
+
+  task :html => :build do
+    exec "nanoc check html"
   end
 
-  desc "Fetch template branches"
-  task :fetch do
-    `git fetch template`
+  task :links => :build do
+    exec "nanoc check internal_links"
   end
 
-  desc "Merge template master branch"
-  task :merge do
-    `git merge --no-ff template/master`
-  end
+end
 
+file '.git/refs/remotes/heroku' do
+  `git remote add -f heroku git@heroku.com:scaffolder.git`
+end
+
+task :publish => ['.git/refs/remotes/heroku',:build] do
+  print "Publish changes to heroku (yes|no) ? "
+  unless STDIN.gets.chomp.downcase == "yes"
+    puts('Aborting.')
+    exit
+  end
+  puts "Pushing changes ..."
+
+  branch = "heroku-#{Time.now.to_i}"
+
+  `git push
+  git checkout -b #{branch} master &&
+  git add -f output &&
+  git commit -m "Rebuild updated site" &&
+  git push -f heroku #{branch}:refs/heads/master &&
+  git checkout genomer &&
+  git branch -D #{branch}`
+
+  puts "Done"
 end

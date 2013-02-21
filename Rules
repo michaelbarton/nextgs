@@ -1,10 +1,4 @@
 #!/usr/bin/env ruby
-require 'compass'
-Compass.add_project_configuration 'compass.config'
-
-preprocess do
-  generate_man_page_fragments
-end
 
 route '/static/*' do
   # /static/foo.ext → /foo.ext
@@ -14,7 +8,7 @@ end
 compile '/static/*' do; end
 
 compile '/javascript/*/' do
-  filter :minify
+  filter :uglify_js, :squeeze => true
 end
 
 route '/javascript/*/' do
@@ -22,8 +16,7 @@ route '/javascript/*/' do
 end
 
 compile '/stylesheets/[^_]*/' do
-  filter :sass, Compass.sass_engine_options.merge(:syntax => :scss)
-  filter :minify
+  filter :rainpress
 end
 
 route '/stylesheets/[^_]*/' do
@@ -36,9 +29,9 @@ route '/markup/*' do
 end
 
 compile '/markup/*' do
-  filter :r_code_fix
   filter :erb
   filter :rdiscount
+  filter :typogruby
   layout 'default'
 end
 
@@ -46,4 +39,4 @@ end
 compile '*' do; nil; end
 route   '*' do; nil; end
 
-layout '*', :haml, :format => :html5, :ugly => true
+layout '*', :haml, :format => :html5

@@ -1,8 +1,12 @@
 ---
 ---
-%header.site_title
-  %a{:href => relative_path_to('/') }
-    %h1
-      = @site.config[:site][:title]
-  %p
+%header
+  %h1.header
+    = @site.config[:site][:title]
+  %p.header
     = @site.config[:site][:subtitle]
+  %ul
+    - @site.config[:site][:navigation].each do |name,href|
+      %a{:href => navigation_link(href)}
+        %li
+          = name

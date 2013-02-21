@@ -3,18 +3,14 @@
 !!!
 %html{ :lang => 'en' }
   = render "_header"
-  %body{:onload => "prettyPrint()" }
-    .container
+  %body
+    .wrapper
       = render "_title"
-      = render "_navigation"
-      %div{:role => @item[:type] || "main"}
-        %article
-          %section
-            %header
-              %a{:href => relative_path_to(@item.path) }
-                %h2
-                  = "#{@item[:title]}"
-            = yield
+      %section
+        %h1
+          = "#{@item[:title]}"
+        = yield
+      = render "_footer"
     = google_analytics @site.config[:site][:analytics_token]
 -# Uncomment these lines after filling in the urls
 -#     = render "_disqus"
