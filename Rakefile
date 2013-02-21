@@ -5,7 +5,29 @@ task :clean do
   `rm -rf output`
 end
 
-task :build => :clean do
+# The scaffold format fetched master branch of scaffold API repo
+file 'content/markup/scaffold-format.markdown' do |t|
+  require 'tempfile'
+  require './lib/content'
+
+  tmp = Tempfile.new('scaffold-file-format')
+  url = 'https://raw.github.com/next-gs/scaffolder-tools/master/man/scaffolder-format.7.ronn'
+  `curl #{url} > #{tmp.path}`
+
+  content = File.read(tmp.path).
+    split("\n").
+    drop(3).
+    reverse.
+    drop(5).
+    reverse.
+    map{|line| increase_markdown_header line }.
+    unshift("---\n\s\stitle: Scaffold Format\n---").
+    join("\n")
+
+  File.open(t.name,'w'){|out| out.print content }
+end
+
+task :build => [:clean, 'content/markup/scaffold-format.markdown'] do
   `nanoc compile`
 end
 

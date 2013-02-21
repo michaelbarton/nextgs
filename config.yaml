@@ -9,12 +9,12 @@ site:
   favicon: "/images/favicon.ico"
   analytics_token: "UA-1362555-4"
   navigation:
-    'about':                "/"
-    'install':              "/install/"
-    'scaffold file format': "/man/scaffolder-format/"
-    'troubleshooting':      "/troubleshooting/"
-    'mailing list':         "/mailing-list/"
-    'contribute':           "/contribute/"
+    'about':           "/"
+    'install':         "/install/"
+    'scaffold format': "/scaffold-format/"
+    'troubleshooting': "/troubleshooting/"
+    'mailing list':    "/mailing-list/"
+    'contribute':      "/contribute/"
 author:
   url: "http://www.michaelbarton.me.uk"
   name: "Michael Barton"
