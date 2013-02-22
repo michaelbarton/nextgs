@@ -11,6 +11,7 @@ site:
   navigation:
     'about':           "/"
     'install':         "/install/"
+    'using plugins':   "/using-plugins/"
     'scaffold format': "/scaffold-format/"
     'troubleshooting': "/troubleshooting/"
     'mailing list':    "/mailing-list/"
