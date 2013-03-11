@@ -10,11 +10,14 @@ site:
   analytics_token: "UA-1362555-4"
   navigation:
     'about':           "/"
-    'install':         "/install/"
     'scaffold format': "/scaffold-format/"
     'troubleshooting': "/troubleshooting/"
     'mailing list':    "/mailing-list/"
     'contribute':      "/contribute/"
+  guides:
+    'installing':         "/install/"
+    'genome annotations': "/managing-annotations/"
+    'a simple genome':    "/a-simple-genome/"
 author:
   url: "http://www.michaelbarton.me.uk"
   name: "Michael Barton"

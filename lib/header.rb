@@ -39,5 +39,5 @@ def favicon
 end
 
 def site_title
- [@item[:title],@site.config[:site][:title],@site.config[:author][:name]].compact.uniq * " | "
+  @site.config[:site][:title] + " &middot; " + @item[:title]
 end

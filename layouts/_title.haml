@@ -10,3 +10,10 @@
       %a{:href => navigation_link(href)}
         %li
           = name
+  %p.header
+    = "Video Guides"
+  %ul
+    - @site.config[:site][:guides].each do |name,href|
+      %a{:href => navigation_link(href)}
+        %li
+          = name
