@@ -320,6 +320,7 @@ section {
 /* Footer */
 
 footer {
+  font-size: 12px;
   width:170px;
   float:left;
   position:fixed;
