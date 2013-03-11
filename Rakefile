@@ -73,7 +73,7 @@ task :publish => ['.git/refs/remotes/heroku',:build] do
   git add -f output &&
   git commit -m "Rebuild updated site" &&
   git push -f heroku #{branch}:refs/heads/master &&
-  git checkout genomer &&
+  git checkout develop &&
   git branch -D #{branch}`
 
   puts "Done"
