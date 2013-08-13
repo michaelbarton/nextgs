@@ -67,3 +67,25 @@ Then run the following on the command line:
 
 If this does not work check the location where RubyGems are being installed and
 replace ``$GEM_HOME`` in the above line with this location.
+
+<%= anchor 'Using genomer', 'using' %>
+
+#### Unresolved specs during Gem::Specification.reset:
+
+Try running the command
+
+    gem cleanup NAME
+
+Where NAME is the gem causing the warning. More details about this error can be
+found on [a related stackoverflow
+question](http://stackoverflow.com/questions/17936340/unresolved-specs-during-gemspecification-reset).
+
+#### The source :rubygems is deprecated because HTTP requests are insecure.
+
+In the file `Gemfile`, replace the line:
+
+    source :rubygems
+
+with:
+
+    source "https://rubygems.org"
